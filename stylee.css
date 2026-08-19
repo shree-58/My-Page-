@@ -1,0 +1,416 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #fff7fb;
+    color: #25202a;
+}
+
+/* ================= NAVBAR ================= */
+
+header {
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 100;
+}
+
+.navbar {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 25px 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 35px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #25202a;
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e83e8c;
+}
+
+.nav-btn {
+    text-decoration: none;
+    color: white;
+    background: #e83e8c;
+    padding: 12px 22px;
+    border-radius: 25px;
+    transition: 0.3s;
+}
+
+.nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(232, 62, 140, 0.3);
+}
+
+/* ================= HERO ================= */
+
+.hero {
+    min-height: 100vh;
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+}
+
+.hero-content {
+    width: 55%;
+}
+
+.small-title,
+.section-title {
+    color: #e83e8c;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 3px;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-size: clamp(45px, 6vw, 75px);
+    line-height: 1.05;
+    margin-bottom: 25px;
+}
+
+.hero h1 span,
+.about-content span,
+.services h2 span,
+.contact h2 span {
+    color: #e83e8c;
+}
+
+.description {
+    max-width: 550px;
+    color: #716b73;
+    font-size: 18px;
+    line-height: 1.7;
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    padding: 14px 25px;
+    border-radius: 30px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.primary {
+    color: white;
+    background: #e83e8c;
+}
+
+.primary:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(232, 62, 140, 0.3);
+}
+
+.secondary {
+    color: #e83e8c;
+    border: 2px solid #e83e8c;
+}
+
+.secondary:hover {
+    background: #e83e8c;
+    color: white;
+}
+
+/* ================= HERO DESIGN ================= */
+
+.hero-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.circle {
+    width: 360px;
+    height: 360px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #ffd4e8, #f7a7ca);
+
+    position: relative;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    box-shadow: 0 25px 60px rgba(232, 62, 140, 0.2);
+}
+
+.circle::after {
+    content: "CREATIVE";
+    font-size: 35px;
+    font-weight: bold;
+    color: white;
+    letter-spacing: 4px;
+}
+
+.floating-card {
+    position: absolute;
+    background: white;
+    padding: 13px 20px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+    font-weight: bold;
+    animation: floating 3s infinite ease-in-out;
+}
+
+.card-one {
+    top: 20px;
+    left: -30px;
+}
+
+.card-two {
+    right: -35px;
+    top: 100px;
+}
+
+.card-three {
+    bottom: 35px;
+    left: -30px;
+}
+
+@keyframes floating {
+    0%, 100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* ================= ABOUT ================= */
+
+.about {
+    padding: 100px 10%;
+    background: white;
+
+    display: flex;
+    align-items: center;
+    gap: 80px;
+}
+
+.about-image {
+    width: 45%;
+    display: flex;
+    justify-content: center;
+}
+
+.about-circle {
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: #ffe0ed;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 100px;
+}
+
+.about-content {
+    width: 55%;
+}
+
+.about-content h2,
+.services h2,
+.contact h2 {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.about-content p:not(.section-title) {
+    color: #716b73;
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* ================= SERVICES ================= */
+
+.services {
+    padding: 100px 10%;
+    text-align: center;
+}
+
+.service-container {
+    margin-top: 45px;
+
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.service-card {
+    background: white;
+    padding: 40px 25px;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+    transition: 0.3s;
+}
+
+.service-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(232, 62, 140, 0.15);
+}
+
+.icon {
+    font-size: 45px;
+    margin-bottom: 20px;
+}
+
+.service-card h3 {
+    font-size: 22px;
+    margin-bottom: 12px;
+}
+
+.service-card p {
+    color: #716b73;
+    line-height: 1.6;
+}
+
+/* ================= CONTACT ================= */
+
+.contact {
+    padding: 100px 20px;
+    text-align: center;
+    background: #ffe3ef;
+}
+
+.contact p:not(.section-title) {
+    color: #716b73;
+    margin-bottom: 30px;
+}
+
+/* ================= FOOTER ================= */
+
+footer {
+    padding: 30px 8%;
+    background: #211d22;
+    color: white;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+footer p {
+    color: #aaa;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+.social-links a {
+    color: white;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.social-links a:hover {
+    color: #e83e8c;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 850px) {
+
+    .nav-links {
+        display: none;
+    }
+
+    .nav-btn {
+        padding: 10px 17px;
+    }
+
+    .hero {
+        padding-top: 120px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-content,
+    .hero-image {
+        width: 100%;
+    }
+
+    .hero-buttons {
+        justify-content: center;
+    }
+
+    .circle {
+        width: 280px;
+        height: 280px;
+    }
+
+    .circle::after {
+        font-size: 25px;
+    }
+
+    .about {
+        flex-direction: column;
+        
+        text-align: center;
+    }
+
+    .about-image,
+    .about-content {
+        width: 100%;
+    }
+
+    .service-container {
+        grid-template-columns: 1fr;
+    }
+
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
